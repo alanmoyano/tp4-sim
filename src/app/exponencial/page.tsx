@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -32,7 +33,7 @@ export default function ExponentialPage() {
       } else {
         setResult(data);
       }
-    } catch (err) {
+    } catch {
       setError('Error de conexión');
       setResult(null);
     } finally {
@@ -70,12 +71,12 @@ export default function ExponentialPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="mb-6">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium transition-colors"
             >
               ← Volver al inicio
-            </a>
+            </Link>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Distribución Exponencial

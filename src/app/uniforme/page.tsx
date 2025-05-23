@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -33,7 +34,7 @@ export default function UniformPage() {
       } else {
         setResult(data);
       }
-    } catch (err) {
+    } catch {
       setError('Error de conexión');
       setResult(null);
     } finally {
@@ -75,12 +76,12 @@ export default function UniformPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="mb-6">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
             >
               ← Volver al inicio
-            </a>
+            </Link>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Distribución Uniforme
@@ -125,7 +126,7 @@ export default function UniformPage() {
                 className="w-full"
                 placeholder="Ej: 1"
               />
-              <p className="text-xs text-gray-500 mt-1">Límite superior (debe ser > mínimo)</p>
+              <p className="text-xs text-gray-500 mt-1">Límite superior (debe ser &gt; mínimo)</p>
             </div>
 
             <div>
